@@ -31,9 +31,10 @@ def to_subtract(list_num):
                         num += to_subtract(list_num)
                         list_num = [rom_n.get(ch)]
                     else:
-                        list_num.append(rom_n.get(ch)
-                                last_rom = rom_n.get(ch)
+    list_num.append(rom_n.get(c)
+ 
+                    last_rom = rom_n.get(ch)
 
-                num += to_subtract(list_num)
+        num += to_subtract(list_num)
 
-                 return (num)
+        return (num)
