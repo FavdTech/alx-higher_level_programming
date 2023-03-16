@@ -12,6 +12,8 @@ class Rectangle:
     terminal.
     """
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Declare the width and height of rectangle object upon creation.
 
@@ -25,6 +27,7 @@ class Rectangle:
         """
         handle_exception(width, "width")
         handle_exception(height, "height")
+        Rectangle.number_of_instances += 1
         self.__width = width
         self.__height = height
         return None
@@ -89,7 +92,7 @@ class Rectangle:
         Args:
             self (Rectangle's object): Refers to instantiated object
 
-        Returns
+        Returns:
             Area of rectangle object
         """
         return self.__width * self.__height
@@ -122,6 +125,30 @@ class Rectangle:
             rect += "#" * self.__width
             rect += "\n"
         return rect[:-1]
+
+    def __repr__(self):
+        """Builtin 'magic' method which returns a command string.
+
+        Args:
+            self (Rectangle's object): Refers to instantiated object
+
+        Returns:
+            string of a py expression to create objects usig 'eval'
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Builtin 'magic' method executes when 'del' is called on an object
+
+        Args:
+            self (Rectangle's object): Refers to instantiated object
+
+        Returns:
+            None
+        """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+        return None
 
     pass
 

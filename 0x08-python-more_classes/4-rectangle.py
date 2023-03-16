@@ -89,7 +89,7 @@ class Rectangle:
         Args:
             self (Rectangle's object): Refers to instantiated object
 
-        Returns
+        Returns:
             Area of rectangle object
         """
         return self.__width * self.__height
@@ -122,6 +122,17 @@ class Rectangle:
             rect += "#" * self.__width
             rect += "\n"
         return rect[:-1]
+
+    def __repr__(self):
+        """Builtin 'magic' method which returns a command string.
+
+        Args:
+            self (Rectangle's object): Refers to instantiated object
+
+        Returns:
+            string of a py expression to create objects usig 'eval'
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
 
     pass
 
